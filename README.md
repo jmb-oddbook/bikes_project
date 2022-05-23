@@ -64,9 +64,6 @@ So where did the researchers get the weather data from for this period? The weat
 Most optimal solution would be to get the data directly from NOAA and remap it to the bike ride data set. This is a bit overkill for this project, maybe if we used all available ride data from 2010 to 2022. => later
 
 
-### Fields added
-
-
 ## Part 2 -- Exploratory data analysis
 
 ## Part 3 -- Visualisations
