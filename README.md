@@ -8,12 +8,63 @@ This was the third project of CAB. It focused on data wrangling, exploratory dat
 
 
 ## Part 1 -- Data wrangling
-Datasets:
+
+### Data sets
+The following data sets were the core of this project:
 * Bike sharing data set : This dataset comes from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset) and has been augmented by weather, seasonal, and calendric data. It contains the years 2011 and 2012.
 * Trip history data : Can be downloaded for the years 2010 up to the last month (here: April 2022) from [Capital Bikeshare](https://ride.capitalbikeshare.com/system-data) *sub* Trip History Data.
-* Station information data set : Can be downloaded as json from [Capital Bikeshare](https://ride.capitalbikeshare.com/system-data) *sub* Real Time Data. *Note* that there is no information when the respective station was opened or if the station was moved during it's existence.
+
+These data sets were used for supplemental information and to expand the scope of the analysis:
+* Station information data set : Can be downloaded as json from [Capital Bikeshare](https://ride.capitalbikeshare.com/system-data) *sub* Real Time Data.<br />
+*Note: there is no information when the respective station was opened or if the station was moved during it's existence.*
+* Weather data [lorem ipsum]
 
 The Capital Bikeshare System Data website also offers supplementary material such as member surveys and summaries.
+
+
+### Attributes
+Description of the fields in the two data sets hour.csv and day.csv supplied by the UCI Archive. There are discrepancies between the text displayed on the website of the data set and the readme file in the data set's zip file. Comments in *italics* by me, JMB.
+* **instant** : record index
+* **dteday** : date *yyyy-mm-dd*
+* **season** : season (1-spring, 2-summer, 3-fall, 4-winter) *this is according to the readme file, the website writes (1-winter, 2-spring, 3-summer, 4-fall)*
+* **yr** : year (0 - 2011, 1 - 2012)
+* **mnth** : month (0 - *Jan* to 12 - *Dec*)
+* **hr** : hour (0 to 23) [only in *hour.csv*]
+* **holiday** : whether the day is a holiday or not (extracted from http://dchr.dc.gov/page/holiday-schedule)
+* **weekday** : day of the week *(0 - Sunday, 1 - Monday, ..., 6 - Saturday ; why would you start with a Sunday??)*
+* **workingday** : if day is neither weekend nor holiday it s 1, otherwise it is 0
+* **weathersit** : **1** (Clear, few clouds, partly cloudy), **2** (Mist + cloudy, mist + broken clouds, mist + few clouds, mist), **3** (Light snow, light rain + thunderstorm + scattered clouds, light rain + scattered clouds), **4** (Heavy rain + ice pellets + thunderstorm + mist, snow + fog)
+* **temp** : Normalized temperature in Celsius. *Website: The values are derived via (t-t_min)/(t_max-t_min), t_min=-8, t_max=+39 (only in hourly scale); Readme states: divided to 41 (max)*
+* **atemp** : Normalized feeling temperature in Celsius. *Website: The values are derived via (t-t_min)/(t_max-t_min), t_min=-16, t_max=+50 (only in hourly scale); Readme states: divided to 50 (max)*
+* **hum** : Normalized humidity. The values are divided to 100 (max)
+* **windspeed** : Normalized wind speed. The values are divided to 67 (max)
+* **casual** : count of casual users
+* **registered** : count of registered users
+* **cnt** : count of total rental bikes including both casual and registered
+
+
+### Issues found in the data
+(1) Mapping of seasons:<br />
+The readme file states 1 = spring and the website states 1 = winter, putting March either at the end (3rd month) of winter or at the end of spring. both data sets (day.csv and hour.csv) have season #1 ranging from the 21 Dec to 21 Mar, thus mapping seasons astronomically. (Other ways of mapping seasons are according to religious conventions, meteorologically, or phaenologically according to the development of the plants).<br />
+Nevertheless, season #1 ought to be "winter". To better compare meteorological statistics and for climate comparisons the World Meteorologial Organization (WMO) lets all seasons start at the beginning of a month. For the WMO spring thus begins on the 1st of March.<br>
+In this data analysis the recommendations of the WMO were followed, and the seasons were remapped based on the month recorded in the instance.
+
+(2) Missing instances or ranges in hour.csv:<br />
+There are missing instances or ranges even though the weather site used by the researchers offers weather for these instances.<br />
+The missing data lies with the data set from Capital Bikes. There is data missing in the trips data set for these instances / ranges.
+
+This carries over into the day.csv data set as the daily records were computed using the hourly records, missing instances and all.
+
+(3) Strange weather:<br />
+An example: checking for Hurricane Sandy, which I'm sure we can agree to call an 'extreme weather phenomenon'. State of emergency was declared for the US east coast Oct 26, Oct 29-30 all government buildings closed and DC Metro services suspended.<br />
+The weather given is: clear (1), misty (2), and light rain (3).</br />
+Personally, I'd rate a hurricane somewhat higher than 'light rain'.<br />
+So where did the researchers get the weather data from for this period? The weather source cited (freemeteo.com) has no data between 2012-09-28 and 2012-11-28, but according to NOAA the weather station at Reagan National was transmitting data.
+
+Most optimal solution would be to get the data directly from NOAA and remap it to the bike ride data set. This is a bit overkill for this project, maybe if we used all available ride data from 2010 to 2022. => later
+
+
+### Fields added
 
 
 ## Part 2 -- Exploratory data analysis
