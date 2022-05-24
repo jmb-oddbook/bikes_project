@@ -3,3 +3,6 @@
 
 # data from the Capital Bike Share repository (very large)
 /data/cbs_data
+
+# derived CBS data (too large)
+/data/mod_data/bike_trips_2011_2012.csv
