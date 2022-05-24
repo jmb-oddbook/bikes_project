@@ -7,5 +7,5 @@
 # derived CBS data (too large)
 /data/mod_data/bike_trips_2011_2012.csv
 
-./vscode
-./ipynb_checkpoints
+/.vscode
+/.ipynb_checkpoints
