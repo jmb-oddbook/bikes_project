@@ -46,7 +46,7 @@ Description of the fields in the two data sets hour.csv and day.csv supplied by 
 
 #### Issues found in the data
 (1) Mapping of seasons:<br />
-The readme file states 1 = spring and the website states 1 = winter, putting March either at the end (3rd month) of winter or at the end of spring. both data sets (day.csv and hour.csv) have season #1 ranging from the 21 Dec to 21 Mar, thus mapping seasons astronomically. (Other ways of mapping seasons are according to religious conventions, meteorologically, or phaenologically according to the development of the plants).<br />
+The readme file states 1 = spring and the website states 1 = winter, putting March either at the end (3rd month) of winter or at the end of spring. Both data sets (day.csv and hour.csv) have season #1 ranging from the 21 Dec to 21 Mar, thus mapping seasons astronomically. (Other ways of mapping seasons are according to religious conventions, meteorologically, or phaenologically according to the development of the plants).<br />
 Nevertheless, season #1 ought to be "winter". To better compare meteorological statistics and for climate comparisons the World Meteorologial Organization (WMO) lets all seasons start at the beginning of a month. For the WMO spring thus begins on the 1st of March.<br>
 In this data analysis the recommendations of the WMO were followed, and the seasons were remapped based on the month recorded in the instance.
 
@@ -93,9 +93,9 @@ There are 194 unique start and end stations. No empty values.
 
 There are 136 records that are either stalled transactions or of users that reconsidered. Criteria for identifying a stalled transaction were identical start and end stations and the duration of the trip is 60 seconds or less. These records were removed.
 
-I also checked for trips that are 60 seconds or less and have a different start and stop station. There are 27 of these. In all except one record the stations lie very close together. Perhaps the borrower changed their mind? And in one record (ID 507845) the borrower discovered instantaneous matter transmission and cycled 3.5 miles in 1 minute (google maps give the time for a car to travel this street distance as 12 minutes - this is D.C.). These 27 records were removed.
+I also checked for trips that are 60 seconds or less and have a different start and stop station. There are 27 of these. In all except one record the stations lie very close together. Perhaps the borrower changed their mind? And in one record (ID 507845) the borrower discovered instantaneous matter transmission and cycled 3.5 miles in 1 minute (google maps gives the time for a car to travel this street distance as 12 minutes - this *is* D.C.). These 27 records were removed.
 
-There are 6 records that have trips that are longer than 23 hours. Either the customer forgot to book the bike back in, the endpoint did not accept the transaction, or something else happened. The company gives a fine of $1200 for customers not returning a bike within 24 hours, so there is a strong incentive for the borrower to make sure to book the bike back in. These 6 records were removed.
+There are 6 records that have trips that are longer than 23 hours. Either the customer forgot to book the bike back in, the endpoint did not accept the transaction, or something else happened. The company gives a fine of $1200 for customers not returning a bike within 24 hours, so there is a strong incentive for the borrower to make sure to bring the bike back. These 6 records were removed.
 
 
 ## Part 3 -- Visualisations
@@ -109,3 +109,7 @@ There are 6 records that have trips that are longer than 23 hours. Either the cu
 ## Appendix 2 -- ML: Forecast of bike demand
 
 ## Appendix 3 -- Forecast with Facebook (Meta?) Prophet
+
+## Appendix 4 -- Mapping bike stations (and rides?)
+
+[First attempt](geomap.ipynb)
