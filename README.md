@@ -121,10 +121,10 @@ Kept the attributes:
 * **station_id** : station ID
 * **has_kiosk** : does the station have a kiosk for the borrower to interact with (True, False)
 * **capacity** : number of bike docks the station has
-* **lon** : longitude of station. Renamed to 'longitude'
+* **lon** : longitude of station. Renamed to **longitude**
 * **name** : name of the station. Describes the corner of two streets where the station is installed
-* **lat** : latitude of the station. Renamed to 'latitude'
+* **lat** : latitude of the station. Renamed to **latitude**
 * **short_name** : unique 5 digit identifier of a station
 Added the field: **region_name** which contains the name of the region associated with the region_id
 
-[First attempt](geomap.ipynb)
+[First attempt](geomap.ipynb) using regular plotting and osmnx. This notebook will only run with Python 3.8.
