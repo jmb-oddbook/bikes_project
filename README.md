@@ -116,14 +116,15 @@ There are 6 records that have trips that are longer than 23 hours. Either the cu
 Dropped the fields: 'electric_bike_surcharge_waiver', 'rental_uris', 'external_id', 'eightd_station_services', 'has_kiosk', 'rental_methods', 'station_type', 'eightd_has_key_dispenser'
 
 Kept the attributes:
-* **region_id** : 
-* **legacy_id** : 
-* **station_id** :
-* **capacity** : 
-* **lon** : longitude of station. Renamed to 'longitude'.
+* **region_id** : unique ID of the region where the station is installed
+* **legacy_id** : legacy ID of the station
+* **station_id** : station ID
+* **has_kiosk** : does the station have a kiosk for the borrower to interact with (True, False)
+* **capacity** : number of bike docks the station has
+* **lon** : longitude of station. Renamed to 'longitude'
 * **name** : name of the station. Describes the corner of two streets where the station is installed
-* **lat** : latitude of the station. Renamed to 'latitude'.
+* **lat** : latitude of the station. Renamed to 'latitude'
 * **short_name** : unique 5 digit identifier of a station
-Added the field: **region_name** which contains the name of the region associated with the region_id.
+Added the field: **region_name** which contains the name of the region associated with the region_id
 
 [First attempt](geomap.ipynb)
