@@ -111,5 +111,19 @@ There are 6 records that have trips that are longer than 23 hours. Either the cu
 ## Appendix 3 -- Forecast with Facebook (Meta?) Prophet
 
 ## Appendix 4 -- Mapping bike stations (and rides?)
+### Station information data set
+#### Attributes
+Dropped the fields: 'electric_bike_surcharge_waiver', 'rental_uris', 'external_id', 'eightd_station_services', 'has_kiosk', 'rental_methods', 'station_type', 'eightd_has_key_dispenser'
+
+Kept the attributes:
+* **region_id** : 
+* **legacy_id** : 
+* **station_id** :
+* **capacity** : 
+* **lon** : longitude of station. Renamed to 'longitude'.
+* **name** : name of the station. Describes the corner of two streets where the station is installed
+* **lat** : latitude of the station. Renamed to 'latitude'.
+* **short_name** : unique 5 digit identifier of a station
+Added the field: **region_name** which contains the name of the region associated with the region_id.
 
 [First attempt](geomap.ipynb)
