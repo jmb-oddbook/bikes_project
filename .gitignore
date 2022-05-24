@@ -1,2 +1,5 @@
 # supplementary material, not relevant to the code
 /suppl_material
+
+# data from the Capital Bike Share repository (very large)
+/data/cbs_data
