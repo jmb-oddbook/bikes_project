@@ -8,21 +8,23 @@ This was the third project of CAB. It focused on data wrangling, exploratory dat
 Note that data from Capital Bike Share will not be uploaded to GitHub due to size, please help yourself to the data from the original Capital Bike Share repository. Links given below.
 
 **Presentation**
+
 [Slides](link) and [Script](link)<br />
 Lorem ipsum ...
 
 **Tableau**
+
 [Link to the Tableau dashboard](link)<br />
 Lorem ipsum ...
 
 <hr>
 
-[Part 1 -- Data wrangling](https://github.com/jmb-oddbook/bikes_project#part-1----data-wrangling)
-[Part 2 -- Exploratory data analysis](https://github.com/jmb-oddbook/bikes_project#part-1----exploratory-data-analysis)
-[Part 3 -- Visualisations and potential KPIs](https://github.com/jmb-oddbook/bikes_project#part-1----visualisations-and-potential-kpis)
-[App. 1 -- ML: Forecast of bike demand](https://github.com/jmb-oddbook/bikes_project#part-1----ml:-forecast-of-bike-demand)
-[App. 2 -- Mapping bike stations (and rides?)](https://github.com/jmb-oddbook/bikes_project#part-1----mapping-bike-stations-(and-rides?))
-[App. 3 -- With ALL the yearly data](https://github.com/jmb-oddbook/bikes_project#part-1----with-all-the-yearly-data)
+[Part 1 -- Data wrangling](https://github.com/jmb-oddbook/bikes_project#part-1----data-wrangling)<br />
+[Part 2 -- Exploratory data analysis](https://github.com/jmb-oddbook/bikes_project#part-2----exploratory-data-analysis)<br />
+[Part 3 -- Visualisations and potential KPIs](https://github.com/jmb-oddbook/bikes_project#part-3----visualisations-and-potential-kpis)<br />
+[App. 1 -- ML: Forecast of bike demand](https://github.com/jmb-oddbook/bikes_project#appendix-1----ml-forecast-of-bike-demand)<br />
+[App. 2 -- Mapping bike stations (and rides?)](https://github.com/jmb-oddbook/bikes_project#appendix-2----mapping-bike-stations-and-rides)<br />
+[App. 3 -- With ALL the yearly data](https://github.com/jmb-oddbook/bikes_project#appendix-3----with-all-the-yearly-data)<br />
 
 <hr>
 
