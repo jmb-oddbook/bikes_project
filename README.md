@@ -7,6 +7,24 @@ This was the third project of CAB. It focused on data wrangling, exploratory dat
 
 Note that data from Capital Bike Share will not be uploaded to GitHub due to size, please help yourself to the data from the original Capital Bike Share repository. Links given below.
 
+**Presentation**
+[Slides](link) and [Script](link)<br />
+Lorem ipsum ...
+
+**Tableau**
+[Link to the Tableau dashboard](link)<br />
+Lorem ipsum ...
+
+<hr>
+
+[Part 1 -- Data wrangling](https://github.com/jmb-oddbook/bikes_project#part-1----data-wrangling)
+[Part 2 -- Exploratory data analysis](https://github.com/jmb-oddbook/bikes_project#part-1----exploratory-data-analysis)
+[Part 3 -- Visualisations and potential KPIs](https://github.com/jmb-oddbook/bikes_project#part-1----visualisations-and-potential-kpis)
+[App. 1 -- ML: Forecast of bike demand](https://github.com/jmb-oddbook/bikes_project#part-1----ml:-forecast-of-bike-demand)
+[App. 2 -- Mapping bike stations (and rides?)](https://github.com/jmb-oddbook/bikes_project#part-1----mapping-bike-stations-(and-rides?))
+[App. 3 -- With ALL the yearly data](https://github.com/jmb-oddbook/bikes_project#part-1----with-all-the-yearly-data)
+
+<hr>
 
 ## Part 1 -- Data wrangling
 
@@ -85,7 +103,7 @@ To more easily identify the data sets when concatenated an additional field **ye
 There are 21 records of trips where the borrower was marked as 'Unknown'. In the hourly data set these records have not been included in the calculation of total riders. These records were dropped.
 
 (2) Missing bike numbers:<br />
-There are 4801 records that are missing a valid bike number, instead they show what appears to be a hexadecimal code, e.g. ?(0XFFFFFFFFAAC5A4C0). There are 16 unique versions of this code. I tried decoding but could not gain any meaningful text. These records were dropped.
+There are 4801 records that are missing a valid bike number, instead they show what appears to be a hexadecimal code, e.g. ?(0XFFFFFFFFAAC5A4C0). There are 16 unique versions of this code. I tried decoding but could not gain any meaningful text. Each of these HIX-bikes were given a new ID starting with W99 to distinguish them from the others.
 
 
 ## Part 2 -- Exploratory data analysis
@@ -98,19 +116,11 @@ I also checked for trips that are 60 seconds or less and have a different start 
 There are 6 records that have trips that are longer than 23 hours. Either the customer forgot to book the bike back in, the endpoint did not accept the transaction, or something else happened. The company gives a fine of $1200 for customers not returning a bike within 24 hours, so there is a strong incentive for the borrower to make sure to bring the bike back. These 6 records were removed.
 
 
-## Part 3 -- Visualisations
+## Part 3 -- Visualisations and potential KPIs
 
-## Part 4 -- Potential KPIs
+## Appendix 1 -- ML: Forecast of bike demand
 
-## Part 5 -- Presentation
-
-## Appendix 1 -- Visualisation with Tableau
-
-## Appendix 2 -- ML: Forecast of bike demand
-
-## Appendix 3 -- Forecast with Facebook (Meta?) Prophet
-
-## Appendix 4 -- Mapping bike stations (and rides?)
+## Appendix 2 -- Mapping bike stations (and rides?)
 ### Station information data set
 #### Attributes
 Dropped the fields: 'electric_bike_surcharge_waiver', 'rental_uris', 'external_id', 'eightd_station_services', 'has_kiosk', 'rental_methods', 'station_type', 'eightd_has_key_dispenser'
@@ -128,3 +138,5 @@ Kept the attributes:
 Added the field: **region_name** which contains the name of the region associated with the region_id
 
 [First attempt](geomap.ipynb) using regular plotting and osmnx. This notebook will only run with Python 3.8.
+
+## Appendix 3 -- With ALL the yearly data
