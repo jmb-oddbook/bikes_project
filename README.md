@@ -40,7 +40,7 @@ These data sets were used for supplemental information and to expand the scope o
 *Note: there is no information when the respective station was opened or if the station was moved during it's existence.*
 * Weather data [lorem ipsum]
 
-The Capital Bikeshare System Data website also offers supplementary material such as member surveys and summaries.
+The Capital Bikeshare System Data website also offers supplementary material such as member surveys and summaries and *sub* Ras Time Data more json information about the configuration and status of the individual stations.
 
 ### Bike sharing data set
 #### Attributes
@@ -101,24 +101,44 @@ To more easily identify the data sets when concatenated an additional field **ye
 
 
 #### Issues found in the data
-(1) Unknown borrowers:<br />
-There are 21 records of trips where the borrower was marked as 'Unknown'. In the hourly data set these records have not been included in the calculation of total riders. These records were dropped.
+(1) Unknown customers:<br />
+There are 21 records of trips where the customer was marked as 'Unknown'. In the hourly data set these records have not been included in the calculation of total riders. These records were dropped.
 
 (2) Missing bike numbers:<br />
-There are 4801 records that are missing a valid bike number, instead they show what appears to be a hexadecimal code, e.g. ?(0XFFFFFFFFAAC5A4C0). There are 16 unique versions of this code. I tried decoding but could not gain any meaningful text. Each of these HEX-bikes were given a new ID starting with W99 to distinguish them from the others.
+There are 4801 records that are missing a valid bike number, instead they show what appears to be a hexadecimal code, e.g. ?(0XFFFFFFFFAAC5A4C0). There are 16 unique versions of this code. I tried decoding but could not gain any meaningful text. Each of these HEX-bikes were given a new ID starting with W99 to distinguish them from the others.<br />
+Note that all the HEX-bikes in 2011 are bikes that are no longer with the fleet in 2012. Or perhaps the issue with the HEX code was ironed out and they have a regular ID in 2012.
 
 
 ## Part 2 -- Exploratory data analysis
-There are 194 unique start and end stations. No empty values.
+There were 144 stations in 2011 and 191 stations in 2012. Of these 3 stations were retired and 50 were added in 2012. There are no empty values in the station data.
 
-There are 136 records that are either stalled transactions or of users that reconsidered. Criteria for identifying a stalled transaction were identical start and end stations and the duration of the trip is 60 seconds or less. These records were removed.
+There were 1325 bikes in 2011, including all of the HEX-bikes, of these 22 bikes, again including the HEX-bikes, were retired from the fleet in 2012. In 2012, 446 bikes were added to the fleet increasing its size to 1749 bikes.
 
-I also checked for trips that are 60 seconds or less and have a different start and stop station. There are 27 of these. In all except one record the stations lie very close together. Perhaps the borrower changed their mind? And in one record (ID 507845) the borrower discovered instantaneous matter transmission and cycled 3.5 miles in 1 minute (google maps gives the time for a car to travel this street distance as 12 minutes - this *is* D.C.). These 27 records were removed.
+There are 136 records that are either stalled transactions or of users that reconsidered. Criteria for identifying a stalled transaction were (1) an identical start and end station and (2) a trip duration of 60 seconds or less. These records were removed.
 
-There are 6 records that have trips that are longer than 23 hours. Either the customer forgot to book the bike back in, the endpoint did not accept the transaction, or something else happened. The company gives a fine of $1200 for customers not returning a bike within 24 hours, so there is a strong incentive for the borrower to make sure to bring the bike back. These 6 records were removed.
+I also checked for trips that were 60 seconds or less and have a different start and end station. There are 27 of these. In all except one record the stations lie very close together. Perhaps the customer changed their mind?<br />
+And in one record (ID 507845) the customer discovered instantaneous matter transmission and cycled 3.5 miles in 1 minute (google maps gives the time for a car to travel this street distance as 12 minutes - this *is* D.C.). These 27 records were removed.
 
+There are 6 records that have trips that are longer than 23 hours. Either the customer forgot to book the bike back in, the endpoint did not accept the transaction, or something else happened. The company gives a fine of $1200 for customers not returning a bike within 24 hours, so there is a strong incentive for the customer to make sure to bring the bike back. These 6 records were removed.
 
 ## Part 3 -- Visualisations and potential KPIs
+
+[x] bike rentals per day of the week, stacked bar registered and casual
+
+
+[ ] number of bikes over time
+[ ] number of stations over time
+[ ] popular check-out stations
+[ ] popular return stations
+[ ] popular routes
+[ ] trip duration
+[ ] travel of one bike over a year (where did it go)
+[ ] average travel of a bike (how much wear and tear to expect)
+[ ] given an origin station which destinations is it providing for (how many rides)
+[ ] popular routes during rush hour (8-9h, 17-18h)
+[ ] popular routes during the weekend
+
+
 
 ## Appendix 1 -- ML: Forecast of bike demand
 
@@ -139,6 +159,10 @@ Kept the attributes:
 * **short_name** : unique 5 digit identifier of a station
 Added the field: **region_name** which contains the name of the region associated with the region_id
 
+
+#### Visualisations
+
+* map of stations retired, active, new in 2012
 [First attempt](geomap.ipynb) using regular plotting and osmnx. This notebook will only run with Python 3.8.
 
 ## Appendix 3 -- With ALL the yearly data
