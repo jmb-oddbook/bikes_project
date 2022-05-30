@@ -105,7 +105,7 @@ To more easily identify the data sets when concatenated an additional field **ye
 There are 21 records of trips where the borrower was marked as 'Unknown'. In the hourly data set these records have not been included in the calculation of total riders. These records were dropped.
 
 (2) Missing bike numbers:<br />
-There are 4801 records that are missing a valid bike number, instead they show what appears to be a hexadecimal code, e.g. ?(0XFFFFFFFFAAC5A4C0). There are 16 unique versions of this code. I tried decoding but could not gain any meaningful text. Each of these HIX-bikes were given a new ID starting with W99 to distinguish them from the others.
+There are 4801 records that are missing a valid bike number, instead they show what appears to be a hexadecimal code, e.g. ?(0XFFFFFFFFAAC5A4C0). There are 16 unique versions of this code. I tried decoding but could not gain any meaningful text. Each of these HEX-bikes were given a new ID starting with W99 to distinguish them from the others.
 
 
 ## Part 2 -- Exploratory data analysis
